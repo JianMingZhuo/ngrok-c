@@ -1,6 +1,6 @@
 #!/bin/sh
-export PATH=$PATH:'/home/dosgo/OpenWrt-SDK/staging_dir/toolchain-mips_r2_gcc-4.6-linaro_uClibc-0.9.33.2/bin'
-export STAGING_DIR="/home/dosgo/OpenWrt-SDK/staging_dir"
+export PATH=$PATH:'/home/ubt32/work/openwrt/bin/ramips/OpenWrt-Toolchain-ramips-mt7688_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-i686/toolchain-mipsel_24kec+dsp_gcc-4.8-linaro_uClibc-0.9.33.2/bin'
+export STAGING_DIR="/home/ubt32/work/openwrt/staging_dir/target-mipsel_24kec+dsp_uClibc-0.9.33.2"
 DIR=build-mips
 mkdir $DIR
 rm -rf $DIR/main.o
@@ -11,7 +11,7 @@ rm -rf $DIR/nonblocking.o
 rm -rf $DIR/openssldl.o
 rm -rf $DIR/ngrokc
 
-CC=mips-openwrt-linux-g++
+CC=mipsel-openwrt-linux-g++
 YH="-Wall -fexceptions -DOPENSSL=1 -DOPENSSLDL=1  -O2"
 $CC $YH -c $1 sendmsg.cpp -o $DIR/sendmsg.o
 $CC $YH -c openssldl.cpp -o $DIR/openssldl.o
